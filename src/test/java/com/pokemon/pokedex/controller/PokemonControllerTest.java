@@ -4,7 +4,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import com.pokemon.pokedex.api.PokemonDescriptionResponse;
 import com.pokemon.pokedex.resolver.PokemonDescriptionService;
-import java.util.function.Consumer;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mockito;
@@ -31,7 +30,7 @@ class PokemonControllerTest {
   @Test
   void testController() {
     final String pokemonName = "dragonite";
-    final String pokemonDescription = "";
+    final String pokemonDescription = "Breathes fire and flies high.";
     PokemonDescriptionResponse expectedResponse = new PokemonDescriptionResponse(pokemonName,
         pokemonDescription);
     Mockito.when(pokemonDescriptionService.resolvePokemonDescription(Mockito.anyString()))

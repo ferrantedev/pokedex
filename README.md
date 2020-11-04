@@ -8,6 +8,14 @@ In order to run this microservice, you will need to install:
 - Gradle
 - Docker
 
+## Running the tests and viewing the test report
+With your favourite CLI, navigate to the project's root.
+Clean, build, test and generate the code coverage report by running 
+`./gradlew clean build test jacocoTestReport`
+
+Open the `index.html` file inside the folder `build/jacoco/test/html/`
+
+
 ## Run instructions
 With your favourite CLI, navigate to the project's root.
 

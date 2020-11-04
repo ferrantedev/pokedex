@@ -1,9 +1,15 @@
 package com.pokemon.pokedex.resolver.shakespeare;
 
+import com.github.benmanes.caffeine.cache.Cache;
+import com.github.benmanes.caffeine.cache.Caffeine;
+import com.github.benmanes.caffeine.cache.LoadingCache;
+import com.pokemon.pokedex.api.PokemonDescriptionResponse;
 import com.pokemon.pokedex.resolver.PokemonDescriptionService;
 import com.pokemon.pokedex.resolver.shakespeare.http.pokeapi.PokeApiPokeDexService;
 import com.pokemon.pokedex.resolver.shakespeare.http.shakespeareTranslation.ShakespeareTranslationService;
+import java.util.concurrent.TimeUnit;
 import lombok.extern.slf4j.Slf4j;
+import org.checkerframework.checker.nullness.qual.NonNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
@@ -25,6 +31,7 @@ public class ShakespearePokemonDescriptionService implements PokemonDescriptionS
       ShakespeareTranslationService translationService) {
     this.pokeDexService = pokeDexService;
     this.translationService = translationService;
+
   }
 
   @Override

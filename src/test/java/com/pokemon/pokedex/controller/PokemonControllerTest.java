@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import com.pokemon.pokedex.api.PokemonDescriptionResponse;
 import com.pokemon.pokedex.resolver.PokemonDescriptionService;
+import java.util.UUID;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mockito;
@@ -55,7 +56,7 @@ class PokemonControllerTest {
     Mockito.when(pokemonDescriptionService.resolvePokemonDescription(Mockito.anyString()))
         .thenReturn(Mono.error(new RuntimeException("Testing exception being caught")));
 
-    final String pokemonName = "dragonite";
+    final String pokemonName = UUID.randomUUID().toString();
     ResponseSpec responseSpec = webTestClient.get()
         .uri("/pokemon/" + pokemonName)
         .exchange();

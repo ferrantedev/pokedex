@@ -35,6 +35,7 @@ jacoco {
 	reportsDir = file("$buildDir/jacoco")
 }
 
+
 test {
 	useJUnitPlatform()
 	finalizedBy jacocoTestReport

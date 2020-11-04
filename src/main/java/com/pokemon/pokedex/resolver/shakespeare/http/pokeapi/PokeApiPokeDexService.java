@@ -21,7 +21,6 @@ public class PokeApiPokeDexService {
     this.pokeApiWebClient = pokeApiWebClient;
   }
 
-
   public Mono<String> resolvePokemonDescription(final String pokemonName) {
     return pokeApiWebClient.get().uri(properties.getPokeapiServiceEndpoint() + "/" + pokemonName)
         .retrieve().bodyToMono(PokemonDetailsResponse.class)

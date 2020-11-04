@@ -2,9 +2,11 @@ package com.pokemon.pokedex.resolver.shakespeare.http.shakespeareTranslation.mod
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class ShakespeareTranslationResponse {
 
   private TranslationContent contents;
